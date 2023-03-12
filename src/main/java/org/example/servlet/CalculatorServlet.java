@@ -9,22 +9,9 @@ import javax.servlet.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class CalculatorServlet  implements Servlet {
+public class CalculatorServlet  extends GenericServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(CalculatorServlet.class);
-
-    private ServletConfig servletConfig;
-
-    @Override
-    public void init(ServletConfig servletConfig) throws ServletException {
-        logger.info("init");
-        this.servletConfig = servletConfig;
-    }
-
-    @Override
-    public ServletConfig getServletConfig() {
-        return this.servletConfig ;
-    }
 
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
@@ -40,13 +27,4 @@ public class CalculatorServlet  implements Servlet {
 
     }
 
-    @Override
-    public String getServletInfo() {
-        return null;
-    }
-
-    @Override
-    public void destroy() {
-        // release resource
-    }
 }
